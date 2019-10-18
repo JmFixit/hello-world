@@ -7,12 +7,13 @@ def props = [[$class: 'ParametersDefinitionProperty', parameterDefinitions: [
     ]]]
 
 properties(props)
+pipeline = new Pipeline()
 
 try {
   stage('Build') {
-      compile()      
-      unitTests()
-      sonar()
+      pipeline.compile()      
+      pipeline.unitTests()
+      pipeline.sonar()
   }
   stage('Deploy RC') {
     echo("Publish Release Candidate Artifacts")
