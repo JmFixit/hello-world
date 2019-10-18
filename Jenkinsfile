@@ -1,6 +1,8 @@
 try {
   stage('Build') {
-    echo("Build Step")
+    stage('Compile') {
+      echo("Compile")
+    }
   }
   stage('Deploy RC') {
     echo("Publish Release Candidate Artifacts")
