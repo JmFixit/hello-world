@@ -14,4 +14,7 @@ try {
     echo("Publish Release Artifacts")
     echo("Deploy Release on dev-int")
   }
+} catch (err) {
+    currentBuild.result = 'FAILURE'
+    throw err
 }
