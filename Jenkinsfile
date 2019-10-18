@@ -9,13 +9,6 @@ def props = [[$class: 'ParametersDefinitionProperty', parameterDefinitions: [
 properties(props)
 
 try {
-  stage('Preporation') {      
-    def work = input(
-      id: 'userInput', message: 'What do you want me to do?', parameters: [
-      [$class: 'ChoiceParameterDefinition', name: 'choice', choices: ['Build (Quick)', 'Build (Release)', 'Promote']], 
-    ])
-    echo("Value ${work}")
-  }
   stage('Build') {
       echo("Compile")  
   }
