@@ -4,7 +4,7 @@ try {
       id: 'userInput', message: 'What do you want me to do?', parameters: [
       [$class: 'ChoiceParameterDefinition', name: 'choice', defaultValue: 'Build', choices: ['Build (Quick)', 'Build (Release)', 'Promote']], 
     ])
-    echo("Value ${work.choice}")
+    echo("Value ${work}")
   }
   stage('Build') {
       echo("Compile")  
