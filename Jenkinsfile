@@ -1,8 +1,12 @@
 try {
+  stage('Preporation') {      
+    def userInput = input(
+      id: 'userInput', message: 'What do you want me to do?', parameters: [
+      [$class: 'ChoiceParameterDefinition', name: 'work', defaultValue: 'Build', choices: ['Build', 'Promote']], 
+    ])
+  }
   stage('Build') {
-    stage('Compile') {
-      echo("Compile")
-    }
+      echo("Compile")  
   }
   stage('Deploy RC') {
     echo("Publish Release Candidate Artifacts")
