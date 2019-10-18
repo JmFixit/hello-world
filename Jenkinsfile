@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Preporation') {
       steps {
-        input(message: 'What you want me to do ?', id: 'preporation', ok: 'a,b,c,d,e')
+        input(message: 'What you want me to do ?', id: 'preporation')
       }
     }
     stage('Compile') {
@@ -32,8 +32,22 @@ pipeline {
       }
     }
     stage('Publish Release') {
-      steps {
-        echo 'Publish Release'
+      parallel {
+        stage('Publish Release') {
+          steps {
+            echo 'Publish Release'
+          }
+        }
+        stage('Publish 2') {
+          steps {
+            echo 'Promote'
+          }
+        }
+        stage('Publish 3') {
+          steps {
+            echo 'Another message'
+          }
+        }
       }
     }
     stage('Promote to dev-int') {
