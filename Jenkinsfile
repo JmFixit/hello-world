@@ -10,9 +10,9 @@ properties(props)
 
 try {
   stage('Build') {
-      echo("Compile")  
-      echo("UT")
-      echo("Sonar")
+      echo("Compile source code")  
+      echo("Run Unit Tests")
+      echo("Run Sonar scan")
   }
   stage('Deploy RC') {
     echo("Publish Release Candidate Artifacts")
