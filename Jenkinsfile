@@ -1,8 +1,18 @@
+def props = [[$class: 'ParametersDefinitionProperty', parameterDefinitions: [
+            [$class: 'BooleanParameterDefinition', name: 'force_include_ci_stages', defaultValue: false, description: "Force execution of IT tests?"],
+            [$class: 'BooleanParameterDefinition', name: 'create_docker_build', defaultValue: false, description: "Force creation of docker image on this branch, also automatically increases version. Use this to create new builds from any branch beside develop."],
+            [$class: 'BooleanParameterDefinition', name: 'skip_it_tests', defaultValue: false, description: "Skip IT stage?"],
+            [$class: 'BooleanParameterDefinition', name: 'dont_skip_build', defaultValue: false, description: "Do not skip build even if last commit contains ignore CI prefix"],
+            [$class: 'BooleanParameterDefinition', name: 'inc_release_ver', defaultValue: false, description: "Increment release version. Use this after promoting develop to staging."]
+    ]]]
+
+properties(props)
+
 try {
   stage('Preporation') {      
     def work = input(
       id: 'userInput', message: 'What do you want me to do?', parameters: [
-      [$class: 'ChoiceParameterDefinition', name: 'choice', defaultValue: 'Build', choices: ['Build (Quick)', 'Build (Release)', 'Promote']], 
+      [$class: 'ChoiceParameterDefinition', name: 'choice', choices: ['Build (Quick)', 'Build (Release)', 'Promote']], 
     ])
     echo("Value ${work}")
   }
