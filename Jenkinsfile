@@ -11,6 +11,8 @@ properties(props)
 try {
   stage('Build') {
       echo("Compile")  
+      echo("UT")
+      echo("Sonar")
   }
   stage('Deploy RC') {
     echo("Publish Release Candidate Artifacts")
