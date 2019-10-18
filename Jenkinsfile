@@ -1,9 +1,10 @@
 try {
   stage('Preporation') {      
-    def userInput = input(
+    def work = input(
       id: 'userInput', message: 'What do you want me to do?', parameters: [
-      [$class: 'ChoiceParameterDefinition', name: 'work', defaultValue: 'Build', choices: ['Build', 'Promote']], 
+      [$class: 'ChoiceParameterDefinition', name: 'choice', defaultValue: 'Build', choices: ['Quick Build'. 'Release Build', 'Promote']], 
     ])
+    echo("Value ${work.choice}")
   }
   stage('Build') {
       echo("Compile")  
