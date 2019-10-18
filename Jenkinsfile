@@ -10,9 +10,9 @@ properties(props)
 
 try {
   stage('Build') {
-      echo("Compile source code")  
-      echo("Run Unit Tests")
-      echo("Run Sonar scan")
+      compile()      
+      unitTests()
+      sonar()
   }
   stage('Deploy RC') {
     echo("Publish Release Candidate Artifacts")
@@ -29,4 +29,16 @@ try {
 } catch (err) {
     currentBuild.result = 'FAILURE'
     throw err
+}
+
+class Pipeline {
+            compile() {
+                        echo("Compile source code")  
+            }            
+            unitTests() {
+                        echo("Run Unit Tests")
+            }
+            sonar() {
+                        echo("Run Sonar scan")
+            }
 }
