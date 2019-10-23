@@ -11,57 +11,54 @@ pipeline = new Pipeline()
 
 try {
   stage('Build') {
-      pipeline.compile()      
-      pipeline.ut()
-      pipeline.sonar()
+      compile()      
+      ut()
+      sonar()
   }
   stage('Deploy RC') {
-    pipeline.publishReleaseCandidate()
-    pipeline.deployReleaseCandidate()
+    publishReleaseCandidate()
+    deployReleaseCandidate()
   }
   stage('IT RC') {
-    pipeline.it()
+    it()
   }
   stage('Promote RC') {
-    pipeline.promoteReleaseCandidate()
-    pipeline.publish()
-    pipeline.deploy()
-    
-    echo("Publish Release Artifacts")
-    
+    promoteReleaseCandidate()
+    publish()
+    deploy()
   }
 } catch (err) {
     currentBuild.result = 'FAILURE'
     throw err
 }
 
-class Pipeline {
-            def compile() {
-                        echo('Compile source code')
-            }            
-            def ut() {
-                        // echo("Run Unit Tests")
-            }
-            def sonar() {
-                        // echo("Run Sonar scan")
-            }
-            def publishReleaseCandidate() {
-                        // echo("Publish Release Candidate Artifacts")
-            }
-            def deployReleaseCandidate() {
-                        // echo("Deploy Release Candidate")
-            }
-            def it() {
-                         // echo("IT run on Release Candidate")
-            }
-            def promoteReleaseCandidate() {
-                        // echo("Promote release candidate to release")
-            }
-            def publish() {
-                        // echo("Publish release artifacts")
-            }
-            def deploy() {
-                        // echo("Deploy Release on dev-int")
-            }
+
+def compile() {
+            echo('Compile source code')
+}            
+def ut() {
+            echo("Run Unit Tests")
+}
+def sonar() {
+            echo("Run Sonar scan")
+}
+def publishReleaseCandidate() {
+            echo("Publish Release Candidate Artifacts")
+}
+def deployReleaseCandidate() {
+            echo("Deploy Release Candidate")
+}
+def it() {
+            echo("IT run on Release Candidate")
+}
+def promoteReleaseCandidate() {
+            echo("Promote release candidate to release")
+}
+def publish() {
+            echo("Publish release artifacts")
+}
+def deploy() {
+            echo("Deploy Release on dev-int")
+}
            
 }
