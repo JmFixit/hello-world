@@ -12,20 +12,23 @@ pipeline = new Pipeline()
 try {
   stage('Build') {
       pipeline.compile()      
-      pipeline.unitTests()
+      pipeline.ut()
       pipeline.sonar()
   }
   stage('Deploy RC') {
-    echo("Publish Release Candidate Artifacts")
-    echo("Deploy Release Candidate")
+    pipeline.publishReleaseCandidate()
+    pipeline.deployReleaseCandidate()
   }
   stage('IT RC') {
-    echo("IT run on Release Candidate")
+    pipeline.it()
   }
   stage('Promote RC') {
-    echo("Promote release candidate to release")
+    pipeline.promoteReleaseCandidate()
+    pipeline.publish()
+    pipeline.deploy()
+    
     echo("Publish Release Artifacts")
-    echo("Deploy Release on dev-int")
+    
   }
 } catch (err) {
     currentBuild.result = 'FAILURE'
@@ -33,13 +36,32 @@ try {
 }
 
 class Pipeline {
-            compile() {
+            def compile() {
                         echo("Compile source code")  
             }            
-            unitTests() {
+            def ut() {
                         echo("Run Unit Tests")
             }
-            sonar() {
+            def sonar() {
                         echo("Run Sonar scan")
             }
+            def publishReleaseCandidate() {
+                        echo("Publish Release Candidate Artifacts")
+            }
+            def deployReleaseCandidate() {
+                        echo("Deploy Release Candidate")
+            }
+            def it() {
+                         echo("IT run on Release Candidate")
+            }
+            def promoteReleaseCandidate() {
+                        echo("Promote release candidate to release")
+            }
+            def publish() {
+                        echo("Publish release artifacts")
+            }
+            def deploy() {
+                        echo("Deploy Release on dev-int")
+            }
+           
 }
