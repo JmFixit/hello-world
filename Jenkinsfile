@@ -61,7 +61,7 @@ class Pipeline {
                         // echo("Publish release artifacts")
             }
             def deploy() {
-                        echo("Deploy Release on dev-int")
+                        // echo("Deploy Release on dev-int")
             }
            
 }
