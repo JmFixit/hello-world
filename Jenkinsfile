@@ -11,7 +11,7 @@ properties(props)
 try {
   stage('Build') {
       compile()      
-      ut()
+      unitTests()
       sonar()
   }
   stage('Deploy RC') {
@@ -19,7 +19,7 @@ try {
     deployReleaseCandidate()
   }
   stage('IT RC') {
-    it2()
+    integrationTests()
   }
   stage('Promote RC') {
     promoteReleaseCandidate()
@@ -35,7 +35,7 @@ try {
 def compile() {
             echo('Compile source code')
 }            
-def ut() {
+def unitTests() {
             echo("Run Unit Tests")
 }
 def sonar() {
@@ -47,7 +47,7 @@ def publishReleaseCandidate() {
 def deployReleaseCandidate() {
             echo("Deploy Release Candidate")
 }
-def it2() {
+def integrationTests() {
             echo("IT run on Release Candidate")
 }
 def promoteReleaseCandidate() {
