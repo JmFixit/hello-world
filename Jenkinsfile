@@ -10,9 +10,11 @@ properties(props)
 
 try {
   stage('Build') {
-      compile()      
-      unitTests()
-      sonar()
+              steps() {
+                  compile()      
+                  unitTests()
+                  sonar()
+              }
   }
   stage('Deploy RC') {
     publishReleaseCandidate()
