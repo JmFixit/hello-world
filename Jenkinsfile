@@ -36,10 +36,10 @@ try {
 }
 
 class Pipeline {
-            compile() {
+            def compile() {
                         echo("Compile source code")  
             }            
-            ut() {
+             ut() {
                         // echo("Run Unit Tests")
             }
             sonar() {
