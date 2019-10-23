@@ -36,31 +36,31 @@ try {
 }
 
 class Pipeline {
-            def compile() {
-                        // echo("Compile source code")  
+            compile() {
+                        echo("Compile source code")  
             }            
-            def ut() {
+            ut() {
                         // echo("Run Unit Tests")
             }
-            def sonar() {
+            sonar() {
                         // echo("Run Sonar scan")
             }
-            def publishReleaseCandidate() {
+            publishReleaseCandidate() {
                         // echo("Publish Release Candidate Artifacts")
             }
-            def deployReleaseCandidate() {
+            deployReleaseCandidate() {
                         // echo("Deploy Release Candidate")
             }
-            def it() {
+            it() {
                          // echo("IT run on Release Candidate")
             }
-            def promoteReleaseCandidate() {
+            promoteReleaseCandidate() {
                         // echo("Promote release candidate to release")
             }
-            def publish() {
+            publish() {
                         // echo("Publish release artifacts")
             }
-            def deploy() {
+            deploy() {
                         // echo("Deploy Release on dev-int")
             }
            
