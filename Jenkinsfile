@@ -7,7 +7,6 @@ def props = [[$class: 'ParametersDefinitionProperty', parameterDefinitions: [
     ]]]
 
 properties(props)
-pipeline = new Pipeline()
 
 try {
   stage('Build') {
