@@ -39,28 +39,28 @@ class Pipeline {
             def compile() {
                         echo("Compile source code")  
             }            
-             ut() {
+            def ut() {
                         // echo("Run Unit Tests")
             }
-            sonar() {
+            def sonar() {
                         // echo("Run Sonar scan")
             }
-            publishReleaseCandidate() {
+            def publishReleaseCandidate() {
                         // echo("Publish Release Candidate Artifacts")
             }
-            deployReleaseCandidate() {
+            def deployReleaseCandidate() {
                         // echo("Deploy Release Candidate")
             }
-            it() {
+            def it() {
                          // echo("IT run on Release Candidate")
             }
-            promoteReleaseCandidate() {
+            def promoteReleaseCandidate() {
                         // echo("Promote release candidate to release")
             }
-            publish() {
+            def publish() {
                         // echo("Publish release artifacts")
             }
-            deploy() {
+            def deploy() {
                         // echo("Deploy Release on dev-int")
             }
            
