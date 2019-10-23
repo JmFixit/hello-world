@@ -9,12 +9,10 @@ def props = [[$class: 'ParametersDefinitionProperty', parameterDefinitions: [
 properties(props)
 
 try {
-  stage('Build') {
-              step() {
-                  compile()      
-                  unitTests()
-                  sonar()
-              }
+  stage('Build') {              
+      compile()      
+      unitTests()
+      sonar()
   }
   stage('Deploy RC') {
     publishReleaseCandidate()
