@@ -59,5 +59,3 @@ def publish() {
 def deploy() {
             echo("Deploy Release on dev-int")
 }
-           
-}
