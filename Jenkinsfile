@@ -19,7 +19,7 @@ try {
     deployReleaseCandidate()
   }
   stage('IT RC') {
-    it()
+    it2()
   }
   stage('Promote RC') {
     promoteReleaseCandidate()
@@ -47,7 +47,7 @@ def publishReleaseCandidate() {
 def deployReleaseCandidate() {
             echo("Deploy Release Candidate")
 }
-def it() {
+def it2() {
             echo("IT run on Release Candidate")
 }
 def promoteReleaseCandidate() {
