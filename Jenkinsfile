@@ -37,7 +37,7 @@ try {
 
 class Pipeline {
             def compile() {
-                        echo("Compile source code")  
+                        echo('Compile source code')
             }            
             def ut() {
                         // echo("Run Unit Tests")
