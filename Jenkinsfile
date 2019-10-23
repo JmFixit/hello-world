@@ -10,7 +10,7 @@ properties(props)
 
 try {
   stage('Build') {
-              steps() {
+              step("Hello World") {
                   compile()      
                   unitTests()
                   sonar()
