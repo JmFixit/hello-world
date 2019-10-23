@@ -37,28 +37,28 @@ try {
 
 class Pipeline {
             def compile() {
-                        echo("Compile source code")  
+                        // echo("Compile source code")  
             }            
             def ut() {
-                        echo("Run Unit Tests")
+                        // echo("Run Unit Tests")
             }
             def sonar() {
-                        echo("Run Sonar scan")
+                        // echo("Run Sonar scan")
             }
             def publishReleaseCandidate() {
-                        echo("Publish Release Candidate Artifacts")
+                        // echo("Publish Release Candidate Artifacts")
             }
             def deployReleaseCandidate() {
-                        echo("Deploy Release Candidate")
+                        // echo("Deploy Release Candidate")
             }
             def it() {
-                         echo("IT run on Release Candidate")
+                         // echo("IT run on Release Candidate")
             }
             def promoteReleaseCandidate() {
-                        echo("Promote release candidate to release")
+                        // echo("Promote release candidate to release")
             }
             def publish() {
-                        echo("Publish release artifacts")
+                        // echo("Publish release artifacts")
             }
             def deploy() {
                         echo("Deploy Release on dev-int")
